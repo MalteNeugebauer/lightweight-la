@@ -25,7 +25,9 @@ This repository offers material to integrate Learning Analytics (LA) into web-ba
 
 [//]: # (<REPLACE < with open and > with closed paranthesis>For ILIAS some special features have to be considered, Download the `*.mbz`-files <according to your preferred version and language>.)
 1. Download the file [lightweight-la-module.mbz](lightweight-la-module.mbz).
-1. Navigate to the course reuse settings and pick the restore option.
+1. Navigate to your course.
+1. To have the code transported by the module work properly, check your course's filter settings. URLs must not be converted. (Usually under More -> Filters -> Convert URLs into links and images -> Off)
+1. Navigate to the course reuse settings and pick the restore option. (Usually under More -> Course reuse -> Restore)
 1. Pick the downloaded `*.mbz`-file in the "Upload File" dialogue.
 1. Perform the restore in your Moodle course. Watch out to pick the right option to not delete any existing content of your course during the restore process accidentally.
 
