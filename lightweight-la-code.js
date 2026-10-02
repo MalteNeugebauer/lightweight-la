@@ -15,8 +15,7 @@ class LA_LMS_Analyzer {
         this.storage_object = {};
         this.Parser;
 
-        this.Language = German;
-        /*if(options.lang != undefined) {
+        if(options.lang != undefined) {
             if(typeof options.lang == "string") {
                 switch(options.lang) {
                     case "en":
@@ -27,13 +26,13 @@ class LA_LMS_Analyzer {
                         this.Language = German;
                 }
             }
-            else if(options.lang instanceOf LanguagePack) {
+            else if(options.lang instanceof LanguagePack) {
                 this.Language = options.lang;
             }
             else {
                 this.Language = German;
             }
-        }*/
+        }
 
         this.LALMSVisualizer = new LA_LMS_Visualizer(this.Language);
 
@@ -3283,7 +3282,7 @@ let German = new LanguagePack({
     hide_options:"Optionen verbergen",
     breakpoint:"Ben&ouml;tigte Mindestpunktzahl (%) f&uuml;r bestanden: ",
     num_trees:"RandomForest Baumanzahl: ",
-    label_prediction:"Vorhersage (work in progress)",
+    label_prediction:"Vorhersage (Random Forest)",
     label_quiz_overview:"Quiz Dashboard",
     back_to_main:"Zur&uuml;ck zur Auswahl",
     quizzes_choose_overview:"W&auml;hle ein Quiz, welches in das Dashboard geladen wird.",
@@ -3293,9 +3292,36 @@ let German = new LanguagePack({
 });
 
 let English = new LanguagePack({
+        welcome:"Hey! Please choose an option.",
+    quizzes_overview:"{amount} quizzes are available.",
+    quizzes_choose_prediction:"Please choose one ore more quizzes for training as well as for prediction.",
+    train_with:"Training with...",
+    prediction_of:"Prediction of...",
+    start_analysis:"Analyse starten",
+    analysis_running:"Analysis running...",
+    load_data:"Loading Data {loaded}/{overall}",
+    finished:"Finished",
+    training:"Training",
+    prediction:"Prediction",
+    error_during_loading:"At least one quiz could not be loaded.",
+    calculate:"Calculating ({add_info})",
+    accuracy_is:"This combination has a prediction accuracy of {accuracy}.",
+    real:"Real",
+    predicted:"Prediction",
+    student_amount:"{participated_all_quizzes_amount} students have attempted all selected quizzes.",
+    show_options:"Show options",
+    hide_options:"Hide options",
+    breakpoint:"Minimum require score (%) to pass: ",
+    num_trees:"RandomForest tree amount: ",
+    label_prediction:"Prediction (Random Forest)",
+    label_quiz_overview:"Quiz Dashboard",
+    back_to_main:"Back to Menu",
+    quizzes_choose_overview:"Please choose which quiz is loaded in the dashboard.",
+    start_overview_load:"Load Dashboard",
+    load_overview_running:"Loading...",
     error_jxg_missing:"Chart can't be processed due to missing JSXGraph module."
 });
 
 let Parser = new DOMParser();
-let LALMSAnalyzer = new LA_LMS_Analyzer({Parser:Parser, Language:German});
+let LALMSAnalyzer = new LA_LMS_Analyzer({Parser:Parser, lang:English});
 //LALMSAnalyzer.LALMSVisualizer.dmIcon.click();
